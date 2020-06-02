@@ -5,4 +5,10 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 run ApplicationController
+use GunsController
+use AddressesController
+use VehiclesController
+use AgenciesController
+use LeosController
+use PersonasController
 use MembersController
