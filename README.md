@@ -18,7 +18,7 @@ Or install it yourself as:
 
 ## Usage
 
-Make sure all dependencies are install and then run `shotgun`
+Make sure all dependencies are installed and then run  `rake db:migrate` to create your tables and then run `shotgun` and follow the directions in your terminal.
 
 ## Development
 
