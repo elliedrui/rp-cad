@@ -2,6 +2,7 @@ class MembersController < ApplicationController
 
   # GET: /members
   get "/members" do
+    @members = Member.all
     erb :"/members/index.html"
   end
 
@@ -17,6 +18,8 @@ class MembersController < ApplicationController
 
   # GET: /members/5
   get "/members/:id" do
+    id = params[:id]
+    @member = Member.find_by(id: id)
     erb :"/members/show.html"
   end
 
