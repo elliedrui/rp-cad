@@ -1,22 +1,24 @@
 # rp-cad
 
-Welcome to rp-cad This is designed to be used as a computer aided dispatch by fivem roleplay communities as either an external webapp or an api to be accessed by an ingame GUI, which will be an eventual release or can be coded by fivem devs with a functional understanding of api usage.
+Welcome to rp-cad. This is designed to be used as a computer aided dispatch by fivem roleplay communities as either an external webapp or an api to be accessed by an ingame GUI, which will be an eventual release or can be coded by fivem devs with a functional understanding of api usage.
 
 
 ## Installation
 Add this line to your application's Gemfile:
 
 `gem 'rp-cad'`
+
 And then execute:
 
 `$ bundle install`
+
 Or install it yourself as:
 
 `$ gem install rp-cad`
 
 ## Usage
 
-make sure all dependencies are install and then run `shotgun`
+Make sure all dependencies are install and then run `shotgun`
 
 ## Development##
 
@@ -28,7 +30,19 @@ To install this gem onto your local machine, run bundle exec rake install. To re
 Bug reports and pull requests are welcome on GitHub at https://github.com/JaesonWatts/rp-cad. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
 
 ## License
-The gem is available as open source under the terms of the MIT License.
+Copyright (c) 2020 Jaeson Watts
+
+Licensed under the Apache License, Version 2.0 (the "License");
+you may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing permissions and
+limitations under the License.
 
 ## Code of Conduct
 Everyone interacting in the rp-cad project's codebases, issue trackers, chat rooms and mailing lists is expected to follow the code of conduct.
