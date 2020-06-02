@@ -5,6 +5,7 @@ if ActiveRecord::Migrator.needs_migration?
 end
 
 run ApplicationController
+use AdminLevelsController
 use GunsController
 use AddressesController
 use VehiclesController

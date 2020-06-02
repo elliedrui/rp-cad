@@ -19,6 +19,7 @@ class MembersController < ApplicationController
   # GET: /members/5
   get "/members/:id" do
     id = params[:id]
+    # add error handling for when there is no member
     @member = Member.find_by(id: id)
     erb :"/members/show.html"
   end
