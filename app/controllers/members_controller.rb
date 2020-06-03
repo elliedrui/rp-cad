@@ -11,9 +11,10 @@ class MembersController < ApplicationController
     erb :"/members/new.html"
   end
 
-  # POST: /members
+  # POST: /members create
   post "/members" do
-    redirect "/members"
+    member = Member.create(params[:member])
+    redirect "/members#{member.id}"
   end
 
   # GET: /members/5

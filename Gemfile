@@ -7,10 +7,14 @@ gem 'rake'
 gem 'require_all'
 gem 'sqlite3', '~> 1.3.6'
 gem 'thin'
-gem 'shotgun'
-gem 'pry'
 gem 'bcrypt'
-gem 'tux'
+
+
+group :development do
+  gem 'shotgun'
+  gem 'pry'
+  gem 'tux'
+end
 
 group :test do
   gem 'rspec'
