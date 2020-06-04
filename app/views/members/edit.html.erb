@@ -1,1 +1,7 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+
+<h2>Edit a Member</h2>
+
+
+<form action=<%= "/members/#{@member.id}" %> method="post">
+  <input type="hidden" name="_method" value="put">
+  <label for="name">Name:</label>
