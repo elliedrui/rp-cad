@@ -1,6 +1,12 @@
 <h2>Member Info: </h2>
-
+<p>
 <ul>
   <li>Name: <%= @member.name %></li>
   <li>Admin Level: <%= @member.admin_level %></li>
 </ul>
+<br>
+<a href=<%= "/personas/new"%>>New Persona</a>
+<br>
+<a href=<%= "/members/#{@member.id}/edit" %>>Edit <%= @member.name %></a> <br>
+<a href="/members">View All Members</a>
+</p>

@@ -14,7 +14,7 @@ class MembersController < ApplicationController
   # POST: /members create
   post "/members" do
     member = Member.create(params[:member])
-    redirect "/members#{member.id}"
+    redirect "/members/#{member.id}"
   end
 
   # GET: /members/5
