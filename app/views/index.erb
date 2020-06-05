@@ -1,1 +1,10 @@
-<>
+<div class="container">
+
+  <% if logged_in %>
+    <h2>Welcome to <%= "#{$community}" %>, <%= current_user.username %></h2>
+    <a href="/logout">Logout</a> | <a href="#">View All Posts</a>
+  <% else  %>
+    <h2>Please log in first</h2>
+    <a href="/signup">Signup</a> | <a href="/login">Login</a>
+  <% end %>
+</div>
