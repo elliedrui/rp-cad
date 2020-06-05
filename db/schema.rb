@@ -11,62 +11,6 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200602022307) do
-
-  create_table "addresses", force: :cascade do |t|
-    t.string   "address"
-    t.integer  "persona_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "admin_levels", force: :cascade do |t|
-    t.string   "admin_level"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "agencies", force: :cascade do |t|
-    t.string   "name"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "guns", force: :cascade do |t|
-    t.string   "serial_num"
-    t.integer  "persona_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "leos", force: :cascade do |t|
-    t.integer  "persona_id"
-    t.integer  "agency_id"
-    t.boolean  "on_duty"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "members", force: :cascade do |t|
-    t.string   "name"
-    t.integer  "admin_level"
-    t.datetime "created_at",  null: false
-    t.datetime "updated_at",  null: false
-  end
-
-  create_table "personas", force: :cascade do |t|
-    t.string   "first_name"
-    t.string   "last_name"
-    t.integer  "member_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
-  create_table "vehicles", force: :cascade do |t|
-    t.string   "plate_number"
-    t.integer  "persona_id"
-    t.datetime "created_at",   null: false
-    t.datetime "updated_at",   null: false
-  end
+ActiveRecord::Schema.define(version: 0) do
 
 end

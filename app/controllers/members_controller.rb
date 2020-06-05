@@ -1,4 +1,4 @@
-class MembersController < ApplicationController
+*class MembersController < ApplicationController
 
   # GET: /members
   get "/members" do
