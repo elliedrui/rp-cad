@@ -9,6 +9,7 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
+  @community = "Flatiron School Project RP"
 
   get "/" do
     logged_in_user_id = session[:user_id]
@@ -18,7 +19,7 @@ class ApplicationController < Sinatra::Base
 
 
   helpers do
-    
+
     def logged_in
       !!session[:user_id]
     end

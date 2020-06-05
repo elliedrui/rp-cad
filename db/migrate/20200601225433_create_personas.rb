@@ -4,7 +4,7 @@ class CreatePersonas < ActiveRecord::Migration
       t.string :first_name
       t.string :last_name
       t.integer :member_id
-      t.integer :has_agency
+      t.boolean :has_agency
       t.integer :agency_id
 
       t.timestamps null: false

@@ -4,7 +4,7 @@ class CreateAddresses < ActiveRecord::Migration
       t.string :address
       t.integer :persona_id
       t.string :description
-      t.boolean :has_interior**
+      t.boolean :has_interior
       t.timestamps null: false
     end
   end
