@@ -1,4 +1,4 @@
-*class MembersController < ApplicationController
+class MembersController < ApplicationController
 
   # GET: /members
   get "/members" do
@@ -39,4 +39,5 @@
   delete "/members/:id/delete" do
     redirect "/members"
   end
+
 end

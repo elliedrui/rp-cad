@@ -1,6 +1,6 @@
-class CreateLeos < ActiveRecord::Migration
+class CreateGovs < ActiveRecord::Migration
   def change
-    create_table :leos do |t|
+    create_table :govs do |t|
       t.integer :persona_id
       t.integer :agency_id
       t.boolean :on_duty
