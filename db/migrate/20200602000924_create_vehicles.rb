@@ -4,6 +4,7 @@ class CreateVehicles < ActiveRecord::Migration
       t.string :plate_number
       t.integer :persona_id
       t.string :type_description
+      t.string :color
       t.timestamps null: false
     end
   end
