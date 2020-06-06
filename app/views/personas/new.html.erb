@@ -6,6 +6,13 @@
   <input type="text" name="persona[first_name]"><br>
   <label for="last_name">First Name:</label>
   <input type="text" name="persona[last_name]"><br>
+  <input type="hidden" name="persona[member_id]" value="<%= current_user.id %>">
+  <label for="has_agency">Has Agency?</label>
+  <input type="checkbox" name="persona[has_agency]"><br>
+  <label for="agency_id">Agency ID Number:</label>
+  <input type="number" name="persona[agecny_id]" min="1" max="5">
   <input type="submit" id="submit" value="Add Persona">
 
 </form>
+
+<a href="/logout">Logout</a> | <a href="/personas/show">View Your Personas </a> 
