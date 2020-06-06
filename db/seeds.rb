@@ -1,9 +1,9 @@
 
-Agency.create(name: 'Los Santos Sheriff\'s Department', acronym: 'LSSD', type: 'LEO') #1
-Agency.create(name: 'Los Santos Police Department', acronym: 'LSPD', type: 'LEO') #2
-Agency.create(name: 'San Andreas Highway Patrol', acronym: 'SAHP', type: 'LEO') #3
-Agency.create(name: 'Los Santos Fire Department', acronym: 'LSFD', type: 'FIRE') #4
-Agency.create(name: 'San Andreas Medical Response', acronym: 'SAMR', type: 'EMS') #5
+Agency.create(name: 'Los Santos Sheriffs Department', acronym: 'LSSD', type_of_agency: 'LEO') #1
+Agency.create(name: 'Los Santos Police Department', acronym: 'LSPD', type_of_agency: 'LEO') #2
+Agency.create(name: 'San Andreas Highway Patrol', acronym: 'SAHP', type_of_agency: 'LEO') #3
+Agency.create(name: 'Los Santos Fire Department', acronym: 'LSFD', type_of_agency: 'FIRE') #4
+Agency.create(name: 'San Andreas Medical Response', acronym: 'SAMR', type_of_agency: 'EMS') #5
 
 AdminLevel.create(admin_level: 'Community Director')
 AdminLevel.create(admin_level: 'Deputy Director')
@@ -27,7 +27,7 @@ Member.create(username: 'wallace', admin_level: 3, password: "password")
 Persona.create(first_name: 'Alec', last_name: 'Simms', member_id: 2, has_agency: true, agency_id: 3)
 Persona.create(first_name: 'Jesse', last_name: 'Trueno', member_id: 2, has_agency: true, agency_id: 1)
 Persona.create(first_name: 'Wallace', last_name: 'Jenkins', member_id: 2, has_agency: true, agency_id: 1)
-Persona.create(first_name: 'Lance', last_name: 'Ferel', member_id: 2, has_agency: false, agency_id: )
+Persona.create(first_name: 'Lance', last_name: 'Ferel', member_id: 2, has_agency: false, agency_id: nil)
 
 # illender's vehicles
 Vehicle.create(plate_number: '831-TRF', persona_id: 1, type_description: 'Chevy Silverado', color: 'blue')
@@ -53,7 +53,7 @@ Address.create(address: '12333 road ave 44444', persona_id: 4, description: 'apt
 
 # wayne's personas
 Persona.create(first_name: 'John', last_name: 'Smith', member_id: 1, has_agency: true, agency_id: 3) # id5
-Persona.create(first_name: 'Angry', last_name: 'Dude', member_id: 1, has_agency: false, agency_id: ) #id6
+Persona.create(first_name: 'Angry', last_name: 'Dude', member_id: 1, has_agency: false, agency_id: nil) #id6
 
 
 # wayne's vehicles

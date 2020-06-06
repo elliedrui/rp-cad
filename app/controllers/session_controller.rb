@@ -5,13 +5,13 @@ class SessionController < ApplicationController
   end
   
   get '/login' do
-    erb :'sessions/login'
+    erb :'login'
   end
 
   post '/signup' do
 
     member = Member.create(params[:member])
-    binding.pry
+    #binding.pry
     member.save
     session[:user_id] = member.id
     redirect to '/'

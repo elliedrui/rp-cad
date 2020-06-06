@@ -3,7 +3,7 @@ class CreateAgencies < ActiveRecord::Migration
     create_table :agencies do |t|
       t.string :name
       t.string :acronym
-      t.string :type #leo fire or ems
+      t.string :type_of_agency #leo fire or ems
 
       t.timestamps null: false
     end
