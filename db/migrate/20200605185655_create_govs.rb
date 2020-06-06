@@ -9,3 +9,6 @@ class CreateGovs < ActiveRecord::Migration
     end
   end
 end
+
+#do i really need the agency id here
+#or can i just hold that in gov??

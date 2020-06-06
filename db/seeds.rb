@@ -84,5 +84,12 @@ Vehicle.create(plate_number: '32354g', persona_id: 7, type_description: 'truck',
 # larry's addresses
 Address.create(address: '223 reed pl 12434', persona_id: 7, description: 'house', has_interior: false)
 
-
 ###
+
+#create our govs list see note in create_govs migrations file
+
+Gov.create(persona_id: 1, agency_id: 3, on_duty: true)
+Gov.create(persona_id: 1, agency_id: 1, on_duty: false)
+Gov.create(persona_id: 1, agency_id: 1, on_duty: false)
+Gov.create(persona_id: 5, agency_id: 3, on_duty: false)
+Gov.create(persona_id: 7, agency_id: 4, on_duty: true)
