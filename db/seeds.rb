@@ -11,10 +11,10 @@ AdminLevel.create(admin_level: 'Advanced Roleplay Team')
 
 #####
 
-Member.create(username: 'wayne', admin_level: 1, password: "password")
-Member.create(username: 'illender', admin_level: 2, password: "password")
-Member.create(username: 'larry', admin_level: 0, password: "password")
-Member.create(username: 'wallace', admin_level: 3, password: "password")
+Member.create(name: 'wayne', admin_level: 1, password: "password")
+Member.create(name: 'illender', admin_level: 2, password: "password")
+Member.create(name: 'larry', admin_level: 0, password: "password")
+Member.create(name: 'wallace', admin_level: 3, password: "password")
 
 # Persona.create(first_name: '', last_name: '', member_id: , has_agency: true, agency_id: )
 # Vehicle.create(plate_number: '', persona_id: 1, type_description: '', color: '')

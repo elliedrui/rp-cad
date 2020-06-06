@@ -5,7 +5,7 @@ class SessionController < ApplicationController
   end
   
   get '/login' do
-    erb :'login'
+    erb :'sessions/login'
   end
 
   post '/signup' do
@@ -18,7 +18,7 @@ class SessionController < ApplicationController
   end
 
   post '/login' do
-    member = Member.find_by(username: params[:member][:username])
+    member = Member.find_by(name: params[:member][:name])
     if member.authenticate(params[:member][:password])
       session[:user_id] = member.id
       redirect to '/'
