@@ -5,21 +5,16 @@ Agency.create(name: 'San Andreas Highway Patrol', acronym: 'SAHP', type_of_agenc
 Agency.create(name: 'Los Santos Fire Department', acronym: 'LSFD', type_of_agency: 'FIRE') #4
 Agency.create(name: 'San Andreas Medical Response', acronym: 'SAMR', type_of_agency: 'EMS') #5
 
-AdminLevel.create(admin_level: 'Community Director')
-AdminLevel.create(admin_level: 'Deputy Director')
-AdminLevel.create(admin_level: 'Advanced Roleplay Team')
+AdminLevel.create(admin_level: 1, description: 'Community Director')
+AdminLevel.create(admin_level: 2, description: 'Deputy Director')
+AdminLevel.create(admin_level: 3, description: 'Advanced Roleplay Team')
 
 #####
 
-Member.create(name: 'wayne', admin_level: 1, password: "password")
-Member.create(name: 'illender', admin_level: 2, password: "password")
-Member.create(name: 'larry', admin_level: 0, password: "password")
-Member.create(name: 'wallace', admin_level: 3, password: "password")
-
-# Persona.create(first_name: '', last_name: '', member_id: , has_agency: true, agency_id: )
-# Vehicle.create(plate_number: '', persona_id: 1, type_description: '', color: '')
-# Gun.create(serial_num: '', type_description: '', persona_id: )
-# Address.create(address: '', persona_id: , description: '', has_interior: )
+Member.create(name: 'wayne', admin_level_id: 1, password: "password")
+Member.create(name: 'illender', admin_level_id: 2, password: "password")
+Member.create(name: 'larry', admin_level_id: 0, password: "password")
+Member.create(name: 'wallace', admin_level_id: 3, password: "password")
 
 
 
