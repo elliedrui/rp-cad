@@ -2,17 +2,17 @@
 <h2>Edit a Member</h2>
 
 
-<form action=<%= "/members/#{@member.id}" %> method="post">
+<form action=<%= "/members/#{current_user.id}" %> method="post">
   <input type="hidden" name="_method" value="put">
   <label for="name">Name:</label>
-  <input type="text" name="member[name]" value=<%= member.name %>>
+  <input type="text" name="member[name]" value=<%= current_user.name %>>
   <label for="admin_level">Admin Level:</label>
-  <input type="integer" name="member[admin_level]" value=<%= member.admin_level %>>
+  <input type="integer" name="member[admin_level]" value=<%= current_user.admin_level_id %>>
   <input type="submit" value="Edit Member Values">
 </form>
 <br>
 <br>
-<form action=<%= "/members/#{@member.id}" %> method="post">
+<form action=<%= "/members/#{current_user.id}" %> method="post">
   <input type="hidden" name="_method" value="delete">
-  <input type="submit" value=<%= "Delete #{@member.name}"%>>
+  <input type="submit" value=<%= "Delete #{current_user.name}"%>>
 </form>
