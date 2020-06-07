@@ -1,3 +1,3 @@
 class Vehicle < ActiveRecord::Base
-  # belongs_to :member, through: :persona
+  belongs_to :persona
 end

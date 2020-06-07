@@ -1,5 +1,12 @@
 <h1>All Members:</h1>
 <% binding.pry %>
-<h2><%= Member.all%></h2>
+<h2><% Member.each do |member|%>
+
+    Name: <%= Member.all.name %>
+    Admin Level: <%= Member.admin_level %>
+
+    <% end %>
+
+</h2>
 
 <a href="/members/new">Create New Member</a>

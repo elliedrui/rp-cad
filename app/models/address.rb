@@ -1,3 +1,3 @@
 class Address < ActiveRecord::Base
-  belongs_to :member ##, -> {joins(:personas)} #oh god, what? 
+  belongs_to :persona ##, -> {joins(:personas)} #oh god, what? 
 end
