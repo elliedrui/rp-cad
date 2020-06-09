@@ -1,10 +1,15 @@
 <h1><%= current_user.name%>'s Personas</h1>
 
-<ul>>
+<p>
+<ul>
+  <li></li>
 
 
 </ul>
-
+<br>
+<a href=<%= "/members/#{current_user.id}/edit" %>>Edit <%= current_user.name %></a> <br>
+<a href="/members">View All Members</a> | <a href="/personas">View Personas</a> | <a href="/logout">
+</p>
  <input type="hidden" name="_method" value="put">
   <label for="first_name">First Name:</label>
   <input type="text" name="persona[first_name]" value= <%= persona.first_name %>><br>
