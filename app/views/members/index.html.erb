@@ -1,12 +1,21 @@
 <h1>All Members:</h1>
-<% binding.pry %>
-<h2><% Member.each do |member|%>
 
-    Name: <%= Member.all.name %>
-    Admin Level: <%= Member.admin_level %>
-
+<table>
+    <tr>
+        <th> Name </th>
+        <th> Admin Level </th>
+    </tr>
+    <% all_members = Member.all%>
+<% all_members.each do |member|%>
+    
+    <tr>
+        <td><%= member.name %></td>
+        <td><%= member.admin_level_id %></td>
+    </tr>
     <% end %>
+    </table>
 
-</h2>
 
-<a href="/members/new">Create New Member</a>
+
+<a href="/members/new">Create New Member</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> <br> | <a href="/members">View All Members</a> | <a href="/personas/">View Personas</a> | <a href="/logout">Logout</a>
+

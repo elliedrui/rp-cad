@@ -2,26 +2,25 @@
 
 <p>
   <% current_personas = Persona.where(member_id: current_user.id) %>
+  
   <table>
     <tr>
-      <th>ID</th>
-      <th>First Name</th>
-      <th>Last Name</th>
-      <th>Agency</th>
+      <th> ID </th>
+      <th> First Name </th>
+      <th> Last Name </th>
+      <th> Agency </th>
     </tr>
   <% current_personas.each do |person| %>
-  <% binding.pry %>
-    <% person.each do |key, value| %>
-      
       <tr>
-        <td><%= value %></td>
+        <td><%= person.id %></td>
+        <td><%= person.first_name %></td>
+        <td><%= person.last_name %></td>
+        <td><%= person.agency_id %></td>
       </tr>
-    
   <% end %>
 </table>
 
 
 <br>
-<a href=<%= "/members/#{current_user.id}/edit" %>>Edit <%= current_user.name %></a> <br>
-<a href="/members">View All Members</a> | <a href="/personas">View Personas</a> | <a href="/logout">
+<a href=<%= "/members/#{current_user.id}/edit" %>>Edit <%= current_user.name %></a> <br> | <a href="/members">View All Members</a> |  <a href="/members/index.html">View Member Info </a> | <a href="/logout">
 </p>
