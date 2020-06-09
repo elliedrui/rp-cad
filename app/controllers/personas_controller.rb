@@ -17,6 +17,7 @@ class PersonasController < ApplicationController
 
   # GET: /personas/5
   get "/personas/:id" do
+    
     erb :"/personas/show.html"
   end
 

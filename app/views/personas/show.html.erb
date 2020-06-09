@@ -1,23 +1,22 @@
 <h1><%= current_user.name%>'s Personas</h1>
 
 <p>
-<ul>
-  <li></li>
-
-
-</ul>
-<br>
-<a href=<%= "/members/#{current_user.id}/edit" %>>Edit <%= current_user.name %></a> <br>
-<a href="/members">View All Members</a> | <a href="/personas">View Personas</a> | <a href="/logout">
-</p>
- <input type="hidden" name="_method" value="put">
-  <label for="first_name">First Name:</label>
-  <input type="text" name="persona[first_name]" value= <%= persona.first_name %>><br>
-  <label for="last_name">First Name:</label>
-  <input type="text" name="persona[last_name]" value= <%= persona.last_name %>><br>
-  <input type="hidden" name="persona[member_id]" value=<%= current_user.id %>>
-  <label for="has_agency">Has Agency?</label>
-  <input type="checkbox" name="persona[has_agency]" value=1 <%= persona.has_agency && "checked" %>><br>
-  <label for="agency_id">Agency ID Number:</label>
-  <input type="number" name="persona[agency_id]" min="1" max="5" value= <%= persona.agency_id%>>
-  <input type="submit" id="submit" value="Update Persona">
+  <% current_personas = Persona.where(member_id: current_user.id) %>
+  
+  <table>
+    <tr>
+      <th> ID </th>
+      <th> First Name </th>
+      <th> Last Name </th>
+      <th> Agency </th>
+    </tr>
+  <% current_personas.each do |person| %>
+  <% binding.pry %>
+      <tr>
+        <td><%= person.id %></td>
+        <td><%= person.first_name %></td>
+        <td><%= person.last_name %></td>
+        <td><%= person.agency_id %></td>
+      </tr>
+  <% end %>
+</table>

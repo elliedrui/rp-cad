@@ -1,1 +1,27 @@
-<h1>This is the Model's index page.</h1>
+<h1><%= current_user.name%>'s Personas</h1>
+
+<p>
+  <% current_personas = Persona.where(member_id: current_user.id) %>
+  <table>
+    <tr>
+      <th>ID</th>
+      <th>First Name</th>
+      <th>Last Name</th>
+      <th>Agency</th>
+    </tr>
+  <% current_personas.each do |person| %>
+  <% binding.pry %>
+    <% person.each do |key, value| %>
+      
+      <tr>
+        <td><%= value %></td>
+      </tr>
+    
+  <% end %>
+</table>
+
+
+<br>
+<a href=<%= "/members/#{current_user.id}/edit" %>>Edit <%= current_user.name %></a> <br>
+<a href="/members">View All Members</a> | <a href="/personas">View Personas</a> | <a href="/logout">
+</p>
