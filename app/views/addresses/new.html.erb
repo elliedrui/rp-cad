@@ -1,7 +1,7 @@
 <h2>Create a new Address</h2>
 
 <% current_personas = Persona.where(member_id: current_user.id) %>
-<form action="/adresses" method="post">
+<form action="/addresses" method="post">
 
   <label for="address">Address:</label>
   <input type="text" name="address[address]"><br>
