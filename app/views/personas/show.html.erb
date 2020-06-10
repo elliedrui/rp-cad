@@ -11,7 +11,7 @@
       <th> Agency </th>
     </tr>
   <% current_personas.each do |person| %>
-  <% binding.pry %>
+  
       <tr>
         <td><%= person.id %></td>
         <td><%= person.first_name %></td>
@@ -20,3 +20,5 @@
       </tr>
   <% end %>
 </table>
+<br>
+<a href=<%= "/personas/new"%>>New Persona</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/logout">Logout</a>

@@ -33,13 +33,17 @@ class MembersController < ApplicationController
     erb :"/members/edit.html"
   end
 
-  # PATCH: /members/5
-  patch "/members/:id" do
-    redirect "/members/:id"
+  # update PATCH/PUT: /members/5
+  put "/members/:id" do
+    member = Member.find_by(id: params[:member][:id])
+    member.update(params[:member])
+    redirect "/members/#{member.id}"
   end
 
   # DELETE: /members/5/delete
   delete "/members/:id/delete" do
+    member = Member.find_by(id: params[:member][:id])
+    member.destroy
     redirect "/members"
   end
 
