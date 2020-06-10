@@ -19,13 +19,12 @@ class SessionController < ApplicationController
 
   post '/login' do
     @member = Member.find_by(name: params[:member][:name])
-    
-    if @member.authenticate(params[:member][:password])
-      session[:user_id] = @member.id
-      redirect to :"/members/show.html"
-    else
+    if @member == nil || !!@member.authenticate(params[:member][:password]) == false
       @error = "Invalid Member name or password!"
       erb :'sessions/login'
+    elsif @member.authenticate(params[:member][:password])
+      session[:user_id] = @member.id
+      redirect to :"/members/show.html"
     end
   end
   
