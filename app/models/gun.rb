@@ -1,3 +1,4 @@
 class Gun < ActiveRecord::Base
-  has_one :member, :through => :persona
+  belongs_to :personas
+  has_one :member, through: :personas
 end

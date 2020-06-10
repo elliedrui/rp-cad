@@ -1,3 +1,4 @@
 class Vehicle < ActiveRecord::Base
-  has_one :member, :through => :persona
+  belongs_to :persona
+  has_one :member, through: :persona
 end

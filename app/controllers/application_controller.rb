@@ -14,7 +14,7 @@ class ApplicationController < Sinatra::Base
   get "/" do
     logged_in_user_id = session[:user_id]
     @member = Member.find_by(id: logged_in_user_id)
-    binding.pry
+    
     erb :"welcome"
   end
 

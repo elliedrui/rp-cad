@@ -24,6 +24,10 @@ class MembersController < ApplicationController
     erb :"/members/show.html"
   end
 
+  get "/members/:id/show" do
+    erb :"/members/show.html"
+  end
+
   # GET: /members/5/edit
   get "/members/:id/edit" do
     erb :"/members/edit.html"

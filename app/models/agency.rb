@@ -1,3 +1,4 @@
 class Agency < ActiveRecord::Base
-  has_many :personas, :through => :gov
+  belongs_to :govs
+  has_many :personas, through: :govs
 end
