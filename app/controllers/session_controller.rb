@@ -22,7 +22,7 @@ class SessionController < ApplicationController
     
     if @member.authenticate(params[:member][:password])
       session[:user_id] = @member.id
-      redirect to :"/members"
+      redirect to :"/members/show.html"
     else
       @error = "Invalid Member name or password!"
       erb :'sessions/login'

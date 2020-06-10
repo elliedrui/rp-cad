@@ -29,6 +29,10 @@ class ApplicationController < Sinatra::Base
       @current_user ||= Member.find_by(id: session[:user_id])
     end
 
+    def current_persona
+      @current_personas = Persona.where(member_id: current_user.id)
+    end
+
   end
 
 

@@ -1,1 +1,21 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+<h2>Create a new Gun</h2>
+
+<% current_personas = Persona.where(member_id: current_user.id) %>
+<form action="/guns" method="post">
+
+  <label for="serial_num">Serial Number:</label>
+  <input type="text" name="gun[serial_num]"><br>
+  <label for="type_description">Type and Description:</label><br>
+  <input type="text" name="gun[type_description]"><br>
+  
+  <label for="persona_id">Persona:</label>
+  <select name="persona_id" id="persona_id">
+  <% current_persona.each do |person| %>
+    <option value="<%= person.id %>"><%= person.first_name %> <%= person.last_name %></option>
+  <% end %>
+  </select>
+  <input type="submit" id="submit" value="Create Gun">
+
+</form>
+
+<a href="/logout">Logout</a> | <a href="/personas/show">Return to your Personas </a> 

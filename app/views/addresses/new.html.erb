@@ -1,1 +1,26 @@
-<h1>Insert the form to create a new instance of your model.</h1>
+<h2>Create a new Address</h2>
+
+<% current_personas = Persona.where(member_id: current_user.id) %>
+<form action="/adresses" method="post">
+
+  <label for="address">Address:</label>
+  <input type="text" name="address[address]"><br>
+ 
+   <label for="persona_id">Persona:</label>
+  <select name="persona_id" id="persona_id">
+  <% current_persona.each do |person| %>
+    <option value="<%= person.id %>"><%= person.first_name %> <%= person.last_name %></option>
+  <% end %>
+  </select><br>
+  
+  <label for="description">Description</label>
+  <input type="text" name="address[description]"><br>
+  <label for="has_interior">Has interior?</label>
+  <input type="checkbox" id="has_interior" name="address[has_interior]" value="true">
+  <%# next line sets unchecked value to false if box is not checked %>
+  <input type="hidden" id="has_interior" name="address[has_interior]" value="false"> 
+  <input type="submit" id="submit" value="Create Address">
+
+</form>
+
+<a href="/logout">Logout</a> | <a href="/personas/show">Return to your Personas </a>

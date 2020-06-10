@@ -2,7 +2,7 @@
 
 <p>
   <% current_personas = Persona.where(member_id: current_user.id) %>
-  
+ 
   <table>
     <tr>
       <th> ID </th>
@@ -21,4 +21,6 @@
   <% end %>
 </table>
 <br>
+<a href="/guns/new">Create a new Gun</a> | <a href="/vehicles/new">Create a new Vehicle</a> | <a href="/addresses/new">Create a new Address</a><br>
 <a href=<%= "/personas/new"%>>New Persona</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/logout">Logout</a>
+<%# why is that in an erb tag right above here? %>
