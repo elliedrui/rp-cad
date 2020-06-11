@@ -30,17 +30,18 @@ class GunsController < ApplicationController
   end
 
   # update PATCH/PUT: /guns/5
-  post "/guns/:id" do
-    gun = Gun.find_by(id: params[:id])
-    gun.update(params[:gun])
+  patch "/guns/:id" do
+    @gun = Gun.find_by(id: params[:id])
+    @gun.update(params[:gun])
+    @gun.save
     redirect "/guns/#{params[:id]}"
   end
 
   # DELETE: /guns/5/delete
-  delete "/guns/:id/delete" do
+  delete "/guns/:id" do
     binding.pry
-    gun = Gun.find_by(id: params[:gun][:id])
-    gun.destroy
+    @gun = Gun.find_by_id(params[:gun][:id])
+    @gun.delete
     redirect "/guns"
   end
 end

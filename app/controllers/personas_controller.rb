@@ -13,14 +13,14 @@ class PersonasController < ApplicationController
 
   # POST: /personas
   post "/personas" do
-    persona = Persona.create(params[:persona])
-    redirect "/personas/#{persona.id}"
+    @persona = Persona.create(params[:persona])
+    @persona.save
+    redirect "/personas/"
   end
 
   # GET: /personas/5
   get "/personas/:id" do
-    id = params[:id]
-    @persona = Persona.find_by(id: id)
+    @persona = Persona.find_by(id: params[:id])
     erb :"/personas/show.html"
   end
 
@@ -32,11 +32,16 @@ class PersonasController < ApplicationController
 
   # PATCH: /personas/5
   patch "/personas/:id" do
-    redirect "/personas/:id"
+    @persona = Persona.find_by_id(params[:id])
+    @persona.update(params[:persona])
+    @persona.save
+    redirect "/personas/#{@persona.id}"
   end
 
   # DELETE: /personas/5/delete
-  delete "/personas/:id/delete" do
+  delete "/personas/:id" do
+    @persona = Persona.find_by_id(params[:id])
+    @persona.delete
     redirect "/personas"
   end
 end

@@ -13,8 +13,8 @@ class MembersController < ApplicationController
 
   # POST: /members
   post "/members" do
-    member = Member.create(params[:member])
-    member.save
+    @member = Member.create(params[:member])
+    @member.save
     redirect "/members"
   end
 
@@ -32,6 +32,7 @@ class MembersController < ApplicationController
 
   # GET: /members/5/edit
   get "/members/:id/edit" do
+    @member = Member.find_by_id(params[:member][:id])
     erb :"/members/edit.html"
   end
 

@@ -24,9 +24,9 @@
 
 </form>
 <br>
-<form action=<%= "/guns/#{current_gun[0].id}" %> method="delete">
-  <input type="hidden" name="_method" value="delete">
-  <input type="submit" value=<%= "Delete" %>>
+<form action=<%= "/guns/#{@gun.id}" %> method="delete">
+  <input id="hidden" type="hidden" name="_method" value="delete">
+  <input type="submit" value="delete">
 </form>
 <br>
 <a href="/logout">Logout</a> | <a href="/personas/show">Return to your Personas </a> 
