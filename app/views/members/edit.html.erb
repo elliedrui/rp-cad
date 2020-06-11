@@ -2,12 +2,12 @@
 <h2>Edit a Member</h2>
 
 
-<form action=<%= "/members/#{current_user.id}" %> method="patch">
-  <input type="hidden" name="_method" value="put">
+<form action=<%= "/members/#{current_user.id}" %> method="POST">
+  <input id="hidden" type="hidden" name="_method" value="patch">
   <label for="name">Name:</label>
   <input type="text" name="member[name]" value=<%= current_user.name %>>
-  <label for="admin_level">Admin Level:</label>
-  <input type="integer" name="member[admin_level]" value=<%= current_user.admin_level_id %>>
+  <label for="admin_level_id">Admin Level:</label>
+  <input type="integer" name="member[admin_level_id]" value=<%= current_user.admin_level_id %>>
   <input type="submit" value="Edit Member Values">
 </form>
 <br>
@@ -16,3 +16,5 @@
   <input type="hidden" name="_method" value="delete">
   <input type="submit" value=<%= "Delete #{current_user.name}"%>>
 </form>
+<br>
+<a href="/logout">Logout</a> | <a href="/members/show">Return to member info</a> 

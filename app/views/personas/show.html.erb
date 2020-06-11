@@ -2,18 +2,21 @@
 
 <p>
   <% current_personas = Persona.where(member_id: current_user.id) %>
- 
+<% binding.pry %>
+ <form action=<%= "/personas/:id/edit"%>>
   <table>
     <tr>
       <th> ID </th>
       <th> First Name </th>
       <th> Last Name </th>
       <th> Agency </th>
+      <th></th>
     </tr>
     <tr>
       <td>___</td>
       <td>_______</td>
       <td>_______</td>
+      <td>___</td>
       <td>___</td>
     </tr>
   <% current_personas.each do |person| %>
@@ -23,10 +26,14 @@
         <td><%= person.first_name %></td>
         <td><%= person.last_name %></td>
         <td style="padding-left:9px"><%= person.agency_id %></td>
+        <td><input type="radio" name="persona_edit_selector" id="persona_edit_selector" value=<%= person.id %>></td>
       </tr>
+      
   <% end %>
 </table>
 <br>
+<input type="submit" value="submit">
+</form>
 <a href="/guns/new">Create a new Gun</a> | <a href="/vehicles/new">Create a new Vehicle</a> | <a href="/addresses/new">Create a new Address</a><br>
 <a href=<%= "/personas/new"%>>New Persona</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/logout">Logout</a>
 <%# why is that in an erb tag right above here? %>

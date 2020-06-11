@@ -1,1 +1,28 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h2>Edit a new Gun</h2>
+
+<% current_gun = Gun.where(persona_id: Persona.where(member_id: current_user.id).id) %>
+<% binding.pry %>
+<form action=<%= %"/guns/#{current_gun.id}" %> method="post">
+
+  <label for="serial_num">Serial Number:</label>
+  <input type="text" name="gun[serial_num]"><br>
+  <label for="type_description">Type and Description:</label><br>
+  <input type="text" name="gun[type_description]"><br>
+  
+  <label for="persona_id">Owner Persona:</label>
+  <select name="persona_id" id="persona_id">
+  <% current_persona.each do |person| %>
+    <option value="<%= person.id %>"><%= person.first_name %> <%= person.last_name %></option>
+  <% end %>
+  </select>
+  <input type="submit" id="submit" value="Create Gun">
+
+</form>
+<br>
+<form action=<%= "/members/#{current_gun.id}" %> method="post">
+  <input type="hidden" name="_method" value="delete">
+  <input type="submit" value=<%= "Delete #{current_gun.name}"%>>
+</form>
+<br>
+<a href="/logout">Logout</a> | <a href="/personas/show">Return to your Personas </a> 
+

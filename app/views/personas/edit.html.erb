@@ -1,24 +1,25 @@
 
 <h2>Edit a new Persona</h2>
-
-<form action=<%="/personas/#{@persona.id}" %> method="post">
+<% binding.pry %>
+<% person = Persona.where(id: params[:persona_edit_selector]) %>
+<form action= <%= "/personas/#{params[:persona_edit_selector]}" %> method="patch">
   <input type="hidden" name="_method" value="put">
   <label for="first_name">First Name:</label>
-  <input type="text" name="persona[first_name]" value= <%= persona.first_name %>><br>
+  <input type="text" name="persona[first_name]" value= <%= person[0].first_name %>><br>
   <label for="last_name">First Name:</label>
-  <input type="text" name="persona[last_name]" value= <%= persona.last_name %>><br>
+  <input type="text" name="persona[last_name]" value= <%= person[0].last_name %>><br>
   <input type="hidden" name="persona[member_id]" value=<%= current_user.id %>>
   <label for="has_agency">Has Agency?</label>
-  <input type="checkbox" name="persona[has_agency]" value=1 <%= persona.has_agency && "checked" %>><br>
+  <input type="checkbox" name="persona[has_agency]" value=1 <%= person[0].has_agency && "checked" %>><br>
   <label for="agency_id">Agency ID Number:</label>
-  <input type="number" name="persona[agency_id]" min="1" max="5" value= <%= persona.agency_id%>>
+  <input type="number" name="persona[agency_id]" min="1" max="5" value= <%= person[0].agency_id%>>
   <input type="submit" id="submit" value="Update Persona">
 
 </form>
 <br><br>
-<form action=<%= "/personas/#{@persona.id}" %> method="post">
+<form action=<%= "/personas/#{person[0].id}" %> method="post">
     <input type="hidden" name="_method" value="delete">
-    <input type="submit" value=<%= "Delete #{@persona.first_name}" %>>
+    <input type="submit" value=<%= "Delete #{person[0].first_name}" %>>
 </form>
 <br>
-<a href="/logout">Logout</a> | <a href="/personas/show">View Your Personas </a> 
+<a href="/logout">Logout</a> | <a href="/personas/show">View Your Personas</a> 

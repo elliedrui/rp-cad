@@ -34,8 +34,9 @@ class MembersController < ApplicationController
   end
 
   # update PATCH/PUT: /members/5
-  put "/members/:id" do
-    member = Member.find_by(id: params[:member][:id])
+  post "/members/:id" do
+    member = Member.find_by(id: params[:id])
+    binding.pry
     member.update(params[:member])
     redirect "/members/#{member.id}"
   end
