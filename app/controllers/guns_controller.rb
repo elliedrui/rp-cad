@@ -12,6 +12,10 @@ class GunsController < ApplicationController
 
   # POST: /guns
   post "/guns" do
+    binding.pry
+    @gun = Gun.create(params[:gun])
+    @gun.save
+    binding.pry
     redirect "/guns"
   end
 

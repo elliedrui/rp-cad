@@ -1,3 +1,12 @@
+<style>
+th {
+  padding: 5px;
+}
+td {
+  padding: 5px
+}
+</style>
+
 <h1>All Members:</h1>
 
 <table>
@@ -6,11 +15,15 @@
         <th> Admin Level </th>
     </tr>
     <% all_members = Member.all%>
+    <tr>
+        <td>----------</td>
+        <td>-----------------------</td>
+    </tr>
 <% all_members.each do |member|%>
     
     <tr>
         <td><%= member.name %></td>
-        <td><%= member.admin_level_id %></td>
+        <td style="padding-left:39px"><%= member.admin_level_id %></td>
     </tr>
     <% end %>
     </table>

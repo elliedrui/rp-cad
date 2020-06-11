@@ -1,3 +1,48 @@
-<h1>This is the Model's index page.</h1>
+<style>
+th {
+  padding: 5px;
+}
+td {
+  padding: 5px
+}
+</style>
+
+<h2><%= current_user.name%>'s Guns</h2>
+
+<% current_personas = Persona.where(member_id: current_user.id) %>
+<% current_guns = Gun.where(persona_id: current_persona.id) %>
+ 
+<p>
+  
+ <form action=<%= "/guns/:id/edit"%>>
+  <table>
+    <tr>
+      <th> ID </th>
+      <th> Serial Number </th>
+      <th> Type and Description </th>
+      <th> Owner </th>
+      <th>Edit:</th>
+    </tr>
+    <tr>
+      <td>-------</td>
+      <td>--------------</td>
+      <td>--------------</td>
+      <td>-------</td>
+      <td>-------</td>
+    </tr>
+    <% current_guns.each do |gun| %>
+  
+      <tr>
+        <td><%= gun.id %></td>
+        <td><%= gun.serial_num %></td>
+        <td><%= gun.type_description %></td>
+        <td><%= gun.persona_id %></td>
+        <td><input type="radio" name="gun_edit_selector" id="gun_edit_selector" value=<%= gun.id %>></td>
+      </tr>
+      
+    <% end %>
+  </table>
+</p>
+<br>
 
 <a href=<%= "/personas/new"%>>New Persona</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/logout">Logout</a>

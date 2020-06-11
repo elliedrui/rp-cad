@@ -1,8 +1,15 @@
+<style>
+th {
+  padding: 5px;
+}
+td {
+  padding: 5px
+}
+</style>
 <h1><%= current_user.name%>'s Personas</h1>
 
 <p>
   <% current_personas = Persona.where(member_id: current_user.id) %>
-<% binding.pry %>
  <form action=<%= "/personas/:id/edit"%>>
   <table>
     <tr>
@@ -10,30 +17,33 @@
       <th> First Name </th>
       <th> Last Name </th>
       <th> Agency </th>
-      <th></th>
+      <th>Edit:</th>
     </tr>
     <tr>
-      <td>___</td>
-      <td>_______</td>
-      <td>_______</td>
-      <td>___</td>
-      <td>___</td>
+      <td>-------</td>
+      <td>--------------</td>
+      <td>--------------</td>
+      <td>-------</td>
+      <td>-------</td>
     </tr>
-  <% current_personas.each do |person| %>
+    <% current_personas.each do |person| %>
   
       <tr>
-        <td style="padding-left:9px"><%= person.id %></td>
+        <td><%= person.id %></td>
         <td><%= person.first_name %></td>
         <td><%= person.last_name %></td>
-        <td style="padding-left:9px"><%= person.agency_id %></td>
+        <td><%= person.agency_id %></td>
         <td><input type="radio" name="persona_edit_selector" id="persona_edit_selector" value=<%= person.id %>></td>
       </tr>
       
-  <% end %>
-</table>
+    <% end %>
+  </table>
+</p>
 <br>
-<input type="submit" value="submit">
+<input type="submit" value="Edit Persona">
 </form>
+<br>
+<a href="/guns">View Guns</a> | <a href="/vehicles">View Vehicles</a> | <a href="/addresses">View Addressess</a><br>
 <a href="/guns/new">Create a new Gun</a> | <a href="/vehicles/new">Create a new Vehicle</a> | <a href="/addresses/new">Create a new Address</a><br>
 <a href=<%= "/personas/new"%>>New Persona</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/logout">Logout</a>
 <%# why is that in an erb tag right above here? %>

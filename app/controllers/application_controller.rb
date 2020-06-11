@@ -9,6 +9,8 @@ class ApplicationController < Sinatra::Base
     set :views, 'app/views'
   end
 
+ 
+
   @community = "Flatiron School Project RP"
 
   get "/" do

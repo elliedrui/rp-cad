@@ -11,9 +11,11 @@ class MembersController < ApplicationController
     erb :"/members/new.html"
   end
 
+  # POST: /members
   post "/members" do
     member = Member.create(params[:member])
-    redirect "/members/#{member.id}"
+    member.save
+    redirect "/members"
   end
 
   # GET: /members/5
@@ -36,7 +38,6 @@ class MembersController < ApplicationController
   # update PATCH/PUT: /members/5
   post "/members/:id" do
     member = Member.find_by(id: params[:id])
-    binding.pry
     member.update(params[:member])
     redirect "/members/#{member.id}"
   end
