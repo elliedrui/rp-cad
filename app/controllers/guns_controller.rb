@@ -29,13 +29,18 @@ class GunsController < ApplicationController
     erb :"/guns/edit.html"
   end
 
-  # PATCH: /guns/5
-  patch "/guns/:id" do
-    redirect "/guns/:id"
+  # update PATCH/PUT: /guns/5
+  post "/guns/:id" do
+    gun = Gun.find_by(id: params[:id])
+    gun.update(params[:gun])
+    redirect "/guns/#{params[:id]}"
   end
 
   # DELETE: /guns/5/delete
   delete "/guns/:id/delete" do
+    binding.pry
+    gun = Gun.find_by(id: params[:gun][:id])
+    gun.destroy
     redirect "/guns"
   end
 end

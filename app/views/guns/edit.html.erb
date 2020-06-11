@@ -1,27 +1,32 @@
-<h2>Edit a new Gun</h2>
+<h2>Edit a Gun</h2>
 
-<% current_gun = Gun.where(persona_id: Persona.where(member_id: current_user.id).id) %>
-<% binding.pry %>
-<form action=<%= %"/guns/#{current_gun.id}" %> method="post">
+<% current_gun = Gun.where(id: params[:gun_edit_selector] ) %>
 
-  <label for="serial_num">Serial Number:</label>
-  <input type="text" name="gun[serial_num]"><br>
-  <label for="type_description">Type and Description:</label><br>
-  <input type="text" name="gun[type_description]"><br>
-  
-  <label for="persona_id">Owner Persona:</label>
+<form action=<%= "/guns/#{current_gun[0].id}" %> method="POST">
+  <input type="hidden" name="_method" value="patch">
+  <label for="serial_num"><b>Serial Number:</b></label>
+  <input type="text" name="gun[serial_num]" value= <%= current_gun[0].serial_num %>>
+  <br>
+  <label for="type_description"><b>Type and Description:</b></label>
+  <input type="text" name="gun[type_description]" value= <%= current_gun[0].type_description %>>
+  <% current_owner = Persona.where(id: current_gun[0].persona_id) %>
+  <p><b>Current Owner:</b> <%= current_owner[0].first_name %> <%= current_owner[0].last_name %></p>
+  <label for="persona_id">Transfer Ownership to Persona:(select current owner to retain ownerhsip)</label>
+  <br>
   <select name="persona_id" id="persona_id">
   <% current_persona.each do |person| %>
     <option value="<%= person.id %>"><%= person.first_name %> <%= person.last_name %></option>
   <% end %>
   </select>
-  <input type="submit" id="submit" value="Create Gun">
+  <br><br>
+  <input type="hidden" name="gun[id]" value=<%= "#{current_gun[0].id}" %>>
+  <input type="submit" id=<%= "#{current_gun[0].id}" %> value="Update Gun">
 
 </form>
 <br>
-<form action=<%= "/members/#{current_gun.id}" %> method="post">
+<form action=<%= "/guns/#{current_gun[0].id}" %> method="delete">
   <input type="hidden" name="_method" value="delete">
-  <input type="submit" value=<%= "Delete #{current_gun.name}"%>>
+  <input type="submit" value=<%= "Delete" %>>
 </form>
 <br>
 <a href="/logout">Logout</a> | <a href="/personas/show">Return to your Personas </a> 

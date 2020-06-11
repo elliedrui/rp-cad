@@ -9,8 +9,8 @@ td {
 
 <h2><%= current_user.name%>'s Guns</h2>
 
-<% current_personas = Persona.where(member_id: current_user.id) %>
-<% current_guns = Gun.where(persona_id: current_persona.id) %>
+
+<% current_guns = Gun.where(persona_id: Persona.where(member_id: current_user.id)) %>
  
 <p>
   
@@ -20,7 +20,7 @@ td {
       <th> ID </th>
       <th> Serial Number </th>
       <th> Type and Description </th>
-      <th> Owner </th>
+      <th> Owner Persona ID</th>
       <th>Edit:</th>
     </tr>
     <tr>
@@ -42,7 +42,11 @@ td {
       
     <% end %>
   </table>
+
 </p>
+<br>
+<input type="submit" value="Edit Gun">
+</form>
 <br>
 
 <a href=<%= "/personas/new"%>>New Persona</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/logout">Logout</a>
