@@ -27,6 +27,7 @@ class MembersController < ApplicationController
   end
 
   get "/members/:id/show" do
+    @gun = Gun.find_by_id(params[:id])
     erb :"/members/show.html"
   end
 

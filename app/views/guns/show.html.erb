@@ -1,6 +1,12 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<h2>Gun Info</h2>
+<% current_gun = Gun.where(id: params[:id]) %>
+<% @gun = current_gun[0] %>
 
-<% current_gun = Gun.where(id: params[:id]%>
-<% binding.pry %>
-<p><%= current_gun %></p>
-<a href=<%= "/guns/new"%>>New Gun</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/logout">Logout</a>
+<p>
+  <b>Serial Number:</b> <%= @gun.serial_num %><br>
+  <b>Type/Description:</b> <%= @gun.type_description %><br>
+  <b>Owner Persona ID:</b> <%= @gun.persona_id %><br>
+
+</p>
+<a href="/guns">Return to Guns</a> | <a href="/vehicles">View Vehicles</a> | <a href="/addresses">View Addressess</a><br>
+<a href=<%= "/guns/new"%>>New Gun</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/personas">View All Member Personas</a> | <a href="/logout">Logout</a>
