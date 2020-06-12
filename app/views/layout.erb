@@ -22,7 +22,19 @@
 
         <%= yield %>
 
+
       <footer class="branding">
+
+      <nav class="crumbs">
+        <ol>
+          <li class="crumb"><a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a></li>
+          <li class="crumb"><a href="/personas">View Current Member Personas</a></li>
+          <li class="crumb"><a href="/vehicles">View Vehicles</a></li>
+          <li class="crumb"><a href="/guns">Return to Guns</a></li>
+          <li class="crumb"><a href="/addresses">View Addressess</a></li>
+          <li class="crumb"><a href="/logout">Logout</a></li>
+        </ol>
+      </nav>
         <small>&copy; 2020 <strong>RpCad</strong></small>
       </footer>
     </div>
