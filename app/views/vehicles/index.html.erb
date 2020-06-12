@@ -25,8 +25,8 @@ td {
     <tr>
       <td>-------</td>
       <td>--------------</td>
-      <td>--------------</td>
-      <td>-------</td>
+      <td>-----------------------</td>
+      <td>-----------------------</td>
       <td>-------</td>
     </tr></b>
     <% current_vehicles.each do |car| %>
@@ -45,5 +45,7 @@ td {
 </p>
 <br>
 <br>
-<a href="/guns/new">Create a new Gun</a> 
-<a href=<%= "/personas/new"%>>New Persona</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/logout">Logout</a>
+<br>
+
+<a href="/vehicles">Return to Vehicles</a> | <a href="/addresses">View Addressess</a> | <a href=<%= "/guns"%>>View Guns</a><br>
+<a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/personas">View All Member Personas</a> | <a href="/logout">Logout</a>

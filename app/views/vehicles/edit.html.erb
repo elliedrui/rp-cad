@@ -1,10 +1,10 @@
 <h2>Edit Vehicle</h2>
 <% current_personas = Persona.where(member_id: current_user.id) %>
-<form action="/vehicles" method="post">
-
+<form action=<%= "/vehicles/#{@vehicle.id}" %> method="post">
+  <input type="hidden" name="_method" value="patch">
   <label for="plate_number">License Plate Number:</label>
-  <input type="text" name="vehicle[plate_number]"><br>
- 
+  <input type="text" name="vehicle[plate_number]" value=<%= @vehicle.plate_number %>>
+  <br> 
   
   <label for="persona_id">Persona:</label>
   <select name="persona_id" id="persona_id">
@@ -12,15 +12,19 @@
     <option value="<%= person.id %>"><%= person.first_name %> <%= person.last_name %></option>
   <% end %>
   </select>
-  <label for="type_description">Type and Description:</label><br>
-  <input type="text" name="vehicle[type_description]"><br>
+  <br>
+  <label for="type_description">Type and Description:</label>
+  <input type="text" name="vehicle[type_description]" value=<%= @vehicle.type_description %>><br>
   <label for="color">Color:</label>
-  <input type="text" name="vehicle[color]"><br>
-  <input type="submit" id="submit" value="Create Vehicle">
+  <input type="text" name="vehicle[color]" value=<%= @vehicle.color %>><br>
+  <input type="submit" id="submit" value="Edit Vehicle">
 
 </form>
-
-<a href="/logout">Logout</a> | <a href="/personas/show">Return to your Personas </a> 
-
-
-<a href=<%= "/personas/new"%>>New Persona</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/logout">Logout</a>
+<br>
+<br>
+<form action=<%= "/vehicles/#{@vehicle.id}" %> method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value=<%= "Delete" %>>
+</form>
+<br>
+<a href="/logout">Logout</a> | <a href="/personas/show">Return to your Personas </a> | <a href=<%= "/personas/new"%>>New Persona</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/logout">Logout</a>

@@ -1,4 +1,13 @@
-<h1>This is the show page for an individual instance of your model.</h1>
-<% binding.pry %>
+<h2>Vehicle Info</h2>
+<% current_vehicle = Vehicle.where(id: params[:id]) %>
+<% @vehicle = current_vehicle[0] %>
 
-<a href=<%= "/personas/new"%>>New Persona</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/logout">Logout</a>
+<p>
+  <b>License Plate:</b> <%= @vehicle.plate_number %><br>
+  <b>Owner Persona ID:</b> <%= @vehicle.persona_id %><br>
+  <b>Type/Description:</b> <%= @vehicle.type_description %><br>
+  <b>Color:</b> <%= @vehicle.color %><br>
+  
+</p>
+<a href=<%= "/vehicles/#{@vehicle.id}/edit" %>>Edit Vehicle</a> | <a href="/vehicles">Return to Vehicles</a> | <a href="/addresses">View Addressess</a> | <a href=<%= "/guns" %>>View Gun</a><br> 
+<a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/personas">View All Member Personas</a> | <a href="/logout">Logout</a>

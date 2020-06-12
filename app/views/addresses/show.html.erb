@@ -1,3 +1,16 @@
-<h1>This is the show page for an individual instance of your model.</h1>
+<h2>Address Info</h2>
+<% current_address = Address.where(id: params[:id]) %>
+<% @address = current_address[0] %>
 
-<a href=<%= "/personas/new"%>>New Persona</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/logout">Logout</a>
+<p>
+  <b>Address:</b> <%= @address.address %><br>
+  <b>Owner Persona ID:</b> <%= @address.persona_id %><br>
+  <b>Description:</b> <%= @address.description %><br>
+  <b>Has Interior?:</b> <%= @address.has_interior %><br>
+  
+</p>
+<br>
+<a href=<%= "/addresses/#{@address.id}/edit" %>>Edit Address</a>
+<br>
+<a href="/addresses">Return to Addresses</a> | <a href="/vehicles">View Vehicles</a> <br>
+<a href=<%= "/guns/new"%>>New Gun</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/personas">View All Member Personas</a> | <a href="/logout">Logout</a>

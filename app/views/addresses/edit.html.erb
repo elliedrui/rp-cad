@@ -1,3 +1,28 @@
-<h1>Insert the form to edit an instance of your model here.</h1>
+<h2>Edit Address</h2>
 
-<a href=<%= "/personas/new"%>>New Persona</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/logout">Logout</a>
+<% current_personas = Persona.where(member_id: current_user.id) %>
+<form action=<%= "/addresses/#{@address.id}" %> method="post">
+  <input type="hidden" name="_method" value="patch">
+  <label for="address">Address:</label>
+  <input type="text" name="address[address]" value=<%= @address.address %>> <br>
+ 
+   <label for="persona_id">Persona:</label>
+  <select name="persona_id" id="persona_id">
+  <% current_persona.each do |person| %>
+    <option value="<%= person.id %>"><%= person.first_name %> <%= person.last_name %></option>
+  <% end %>
+  </select><br>
+  
+  <label for="description">Description</label>
+  <input type="text" name="address[description]" value=<%= @address.description %>><br>
+  <label for="has_interior">Has interior?</label>
+  <input type="checkbox" id="has_interior" name="address[has_interior]" value="true">
+  <%# next line sets unchecked value to false if box is not checked %>
+  <input type="hidden" id="has_interior" name="address[has_interior]" value="false"> 
+  <input type="submit" id="submit" value="Edit Address">
+
+</form>
+<br>
+<br>
+<a href="/addresses">Return to Addresses</a> | <a href="/vehicles">View Vehicles</a> | <a href="/addresses">View Addressess</a><br>
+<a href=<%= "/guns/new"%>>New Gun</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/personas">View All Member Personas</a> | <a href="/logout">Logout</a>

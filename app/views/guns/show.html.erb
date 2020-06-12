@@ -8,5 +8,8 @@
   <b>Owner Persona ID:</b> <%= @gun.persona_id %><br>
 
 </p>
+<br>
+<a href=<%= "/gun/#{@gun.id}/edit" %>>Edit Gun</a>
+<br>
 <a href="/guns">Return to Guns</a> | <a href="/vehicles">View Vehicles</a> | <a href="/addresses">View Addressess</a><br>
 <a href=<%= "/guns/new"%>>New Gun</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/personas">View All Member Personas</a> | <a href="/logout">Logout</a>

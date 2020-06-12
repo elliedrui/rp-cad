@@ -12,6 +12,9 @@ class AddressesController < ApplicationController
 
   # POST: /addresses
   post "/addresses" do
+    binding.pry
+    @address = Address.create(params[address])
+    @address.save
     redirect "/addresses"
   end
 
@@ -22,16 +25,22 @@ class AddressesController < ApplicationController
 
   # GET: /addresses/5/edit
   get "/addresses/:id/edit" do
+    @address = Address.find_by_id(params[:id])
     erb :"/addresses/edit.html"
   end
 
   # PATCH: /addresses/5
   patch "/addresses/:id" do
-    redirect "/addresses/:id"
+    @address = Address.find_by_id(params[:id])
+    @address.update(params[:address])
+    @address.save
+    redirect "/addresses"
   end
 
   # DELETE: /addresses/5/delete
   delete "/addresses/:id/delete" do
+    @address = Address.find_by_id(params[:id])
+    @address.delete
     redirect "/addresses"
   end
 end
