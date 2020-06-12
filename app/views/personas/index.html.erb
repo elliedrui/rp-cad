@@ -9,8 +9,6 @@ td {
 <h1><%= current_user.name%>'s Personas</h1>
 
 <p>
-  <% current_personas = Persona.where(member_id: current_user.id) %>
-
   <table>
     <tr>
       <th> ID </th>
@@ -26,7 +24,7 @@ td {
       <td>-------</td>
       <td>-------</td>
     </tr>
-    <% current_personas.each do |person| %>
+    <% @personas.each do |person| %>
   
       <tr>
         <td><%= person.id %></td>

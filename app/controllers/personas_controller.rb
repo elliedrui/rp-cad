@@ -2,7 +2,8 @@ class PersonasController < ApplicationController
 
   # GET: /personas
   get "/personas" do
-    @personas = Persona.where(member_id = current_user.id)
+    
+    @personas = current_user.personas
     erb :"/personas/index.html"
   end
 
@@ -13,7 +14,8 @@ class PersonasController < ApplicationController
 
   # POST: /personas
   post "/personas" do
-    @persona = Persona.create(params[:persona])
+    @persona = current_user.personas.create(params[:persona])
+    binding.pry
     @persona.save
     redirect "/personas"
   end
@@ -28,7 +30,13 @@ class PersonasController < ApplicationController
   # GET: /personas/5/edit
   get "/personas/:id/edit" do
     @persona = Persona.find_by(id: params[:id])
-    erb :"/personas/edit.html"
+  
+    if current_user == @persona.member
+      erb :"/personas/edit.html"
+    else
+      redirect "/personas"
+    end
+    
   end
 
   # PATCH: /personas/5

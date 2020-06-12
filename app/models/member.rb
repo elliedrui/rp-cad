@@ -5,3 +5,8 @@ class Member < ActiveRecord::Base
   has_many :vehicles, through: :personas
   has_secure_password
 end
+# If @member && @member.authenticate(params[:password])
+# redirect for good login
+# else
+# Redirect for failed login
+# end
