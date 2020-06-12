@@ -12,6 +12,9 @@ class VehiclesController < ApplicationController
 
   # POST: /vehicles
   post "/vehicles" do
+    binding.pry
+    @vehicle = Vehicle.create(params[vehicle])
+    @vehicle.save
     redirect "/vehicles"
   end
 
@@ -22,16 +25,23 @@ class VehiclesController < ApplicationController
 
   # GET: /vehicles/5/edit
   get "/vehicles/:id/edit" do
+    binding.pry
+    @vehicle = Vehicle.find_by_id(params)
     erb :"/vehicles/edit.html"
   end
 
   # PATCH: /vehicles/5
   patch "/vehicles/:id" do
-    redirect "/vehicles/:id"
+    @vehicle = Vehicle.find_by_id(params[:id])
+    @vehicle.update(params[:vehicle])
+    @vehicle.save
+    redirect "/vehicles/#{params[:id]}"
   end
 
   # DELETE: /vehicles/5/delete
   delete "/vehicles/:id/delete" do
+    @vehicle = Vehicle.find_by_id(params[:id])
+    @vehicle.delete
     redirect "/vehicles"
   end
 end

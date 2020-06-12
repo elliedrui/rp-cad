@@ -20,6 +20,7 @@ class PersonasController < ApplicationController
 
   # GET: /personas/5
   get "/personas/:id" do
+    binding.pry
     @persona = Persona.find_by(id: params[:id])
     erb :"/personas/show.html"
   end

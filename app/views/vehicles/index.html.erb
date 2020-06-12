@@ -1,4 +1,49 @@
-<h1>This is the Model's index page.</h1>
-<% binding.pry %>
-<a href=<%= "/personas/new"%>>New Persona</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/logout">Logout</a>
+<style>
+th {
+  padding: 5px;
+}
+td {
+  padding: 5px
+}
+</style>
 
+<h2><%= current_user.name%>'s Vehicles</h2>
+
+
+<% current_vehicles = Vehicle.where(persona_id: Persona.where(member_id: current_user.id)) %>
+ 
+<p>
+  <table>
+   <b> <tr>
+      <th> ID </th>
+      <th> License Plate </th>
+      <th> Owner Persona ID </th>
+      <th> Type and Description </th>
+      <th> Color</th>
+      <th></th>
+    </tr>
+    <tr>
+      <td>-------</td>
+      <td>--------------</td>
+      <td>--------------</td>
+      <td>-------</td>
+      <td>-------</td>
+    </tr></b>
+    <% current_vehicles.each do |car| %>
+  
+      <tr>
+        <td><%= car.id %></td>
+        <td><%= car.plate_number %></td>
+        <td><%= car.persona_id %></td>
+        <td><%= car.type_description %></td>
+        <td><a href=<%= "/vehicles/#{car.id}" %>>View</a></td>
+      </tr>
+      
+    <% end %>
+  </table>
+
+</p>
+<br>
+<br>
+<a href="/guns/new">Create a new Gun</a> 
+<a href=<%= "/personas/new"%>>New Persona</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/logout">Logout</a>

@@ -12,10 +12,8 @@ class GunsController < ApplicationController
 
   # POST: /guns
   post "/guns" do
-    binding.pry
     @gun = Gun.create(params[:gun])
     @gun.save
-    binding.pry
     redirect "/guns"
   end
 
@@ -39,7 +37,6 @@ class GunsController < ApplicationController
 
   # DELETE: /guns/5/delete
   delete "/guns/:id" do
-    binding.pry
     @gun = Gun.find_by_id(params[:gun][:id])
     @gun.delete
     redirect "/guns"

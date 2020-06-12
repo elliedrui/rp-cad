@@ -33,12 +33,13 @@ class MembersController < ApplicationController
 
   # GET: /members/5/edit
   get "/members/:id/edit" do
-    @member = Member.find_by_id(params[:member][:id])
+  
+    @member = Member.find_by_id(params[:id])
     erb :"/members/edit.html"
   end
 
   # update PATCH/PUT: /members/5
-  post "/members/:id" do
+  patch "/members/:id" do
     member = Member.find_by(id: params[:id])
     member.update(params[:member])
     redirect "/members/#{member.id}"

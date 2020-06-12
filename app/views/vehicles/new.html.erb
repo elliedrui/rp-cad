@@ -7,11 +7,12 @@
  
   
   <label for="persona_id">Persona:</label>
-  <select name="persona_id" id="persona_id">
+  <select name="vehicle[persona_id]" id="persona_id">
   <% current_persona.each do |person| %>
     <option value="<%= person.id %>"><%= person.first_name %> <%= person.last_name %></option>
   <% end %>
   </select>
+  <br>
   <label for="type_description">Type and Description:</label><br>
   <input type="text" name="vehicle[type_description]"><br>
   <label for="color">Color:</label>
