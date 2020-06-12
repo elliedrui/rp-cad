@@ -12,7 +12,8 @@ class VehiclesController < ApplicationController
 
   # POST: /vehicles
   post "/vehicles" do
-    @vehicle = Vehicle.create(params[vehicle])
+    binding.pry
+    @vehicle = Vehicle.create(params[:vehicle])
     @vehicle.save
     redirect "/vehicles"
   end
@@ -38,7 +39,7 @@ class VehiclesController < ApplicationController
   end
 
   # DELETE: /vehicles/5/delete
-  delete "/vehicles/:id/delete" do
+  delete "/vehicles/:id" do
     @vehicle = Vehicle.find_by_id(params[:id])
     @vehicle.delete
     redirect "/vehicles"

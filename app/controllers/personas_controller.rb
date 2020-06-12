@@ -15,7 +15,7 @@ class PersonasController < ApplicationController
   post "/personas" do
     @persona = Persona.create(params[:persona])
     @persona.save
-    redirect "/personas/"
+    redirect "/personas"
   end
 
   # GET: /personas/5

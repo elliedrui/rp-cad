@@ -46,7 +46,7 @@ class MembersController < ApplicationController
   end
 
   # DELETE: /members/5/delete
-  delete "/members/:id/delete" do
+  delete "/members/:id" do
     member = Member.find_by(id: params[:member][:id])
     member.destroy
     redirect "/members"

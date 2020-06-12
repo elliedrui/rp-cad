@@ -13,8 +13,13 @@ class AddressesController < ApplicationController
   # POST: /addresses
   post "/addresses" do
     binding.pry
-    @address = Address.create(params[address])
+    @address = Address.new
+    @address.address = params[:address][:address]
+    @address.description = params[:address][:description]
+    @address.has_interior = params[:address][:has_interior]
+    @address.persona_id = params[:persona_id]
     @address.save
+    binding.pry
     redirect "/addresses"
   end
 
@@ -38,7 +43,7 @@ class AddressesController < ApplicationController
   end
 
   # DELETE: /addresses/5/delete
-  delete "/addresses/:id/delete" do
+  delete "/addresses/:id" do
     @address = Address.find_by_id(params[:id])
     @address.delete
     redirect "/addresses"

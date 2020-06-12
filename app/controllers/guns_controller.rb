@@ -24,6 +24,8 @@ class GunsController < ApplicationController
 
   # GET: /guns/5/edit
   get "/guns/:id/edit" do
+    
+    @gun = Gun.find_by_id(params[:id])
     erb :"/guns/edit.html"
   end
 
@@ -37,6 +39,7 @@ class GunsController < ApplicationController
 
   # DELETE: /guns/5/delete
   delete "/guns/:id" do
+    binding.pry
     @gun = Gun.find_by_id(params[:gun][:id])
     @gun.delete
     redirect "/guns"

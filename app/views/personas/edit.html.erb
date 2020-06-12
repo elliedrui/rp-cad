@@ -19,7 +19,6 @@
 <br>
 <form action=<%= "/personas/#{@persona.id}" %> method="post">
     <input type="hidden" name="_method" value="delete">
-    <input type="submit" value=<%= "Delete #{@persona.first_name}" %>>
+    <input type="submit" value="Delete">
 </form>
 <br>
-<a href="/logout">Logout</a> | <a href="/personas/show.html">View Your Personas</a> 

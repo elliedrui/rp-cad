@@ -24,5 +24,8 @@
 </form>
 <br>
 <br>
-<a href="/addresses">Return to Addresses</a> | <a href="/vehicles">View Vehicles</a> | <a href="/addresses">View Addressess</a><br>
-<a href=<%= "/guns/new"%>>New Gun</a> | <a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/personas">View All Member Personas</a> | <a href="/logout">Logout</a>
+<form action=<%= "/addresses/#{@address.id}" %> method="post">
+    <input type="hidden" name="_method" value="delete">
+    <input type="submit" value=<%= "Delete" %>>
+</form>
+<br>

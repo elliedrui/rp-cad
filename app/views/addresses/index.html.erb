@@ -10,7 +10,7 @@ td {
 <h2><%= current_user.name%>'s Addresses</h2>
 
 
-<% current_address = Address.where(id: current_user.id) %>
+<% current_address = Address.where(persona_id: current_user.personas) %>
   
 <p>
   <table>
@@ -31,7 +31,7 @@ td {
     </tr></b>
   
     <% current_address.each do |house| %>
-  
+ 
       <tr>
         <td><%= house.id %></td>
         <td><%= house.address %></td>
@@ -44,8 +44,4 @@ td {
   </table>
 
 </p>
-<br>
-<br>
-<br>
-<a href="/addresses">Return to Addresses</a> | <a href="/vehicles">View Vehicles</a> | <a href="/addresses">View Addressess</a> | <a href=<%= "/guns"%>>View Guns</a><br>
-<a href=<%= "/members/#{current_user.id}/show" %>>Return to current Member (<%= current_user.name %>)</a> | <a href="/personas">View All Member Personas</a> | <a href="/logout">Logout</a>
+<a href="/addresses/new">Register New Address</a>
