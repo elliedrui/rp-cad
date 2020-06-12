@@ -13,7 +13,7 @@ class SessionController < ApplicationController
     @member = Member.new(:name => params[:member][:name], :admin_level_id => 0, :password => params[:member][:password])
     @member.save
     session[:user_id] = @member.id
-    binding.pry
+  
     redirect to :"/members/show.html"
   end
 
