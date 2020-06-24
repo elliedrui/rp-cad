@@ -58,12 +58,11 @@ GEM
       coderay (~> 1.1)
       method_source (~> 1.0)
     public_suffix (4.0.5)
-    rack (2.2.2)
+    rack (2.2.3)
     rack-protection (2.0.8.1)
       rack
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
-    rake (13.0.1)
     regexp_parser (1.7.0)
     require_all (3.0.0)
     ripl (0.7.1)
@@ -125,8 +124,8 @@ DEPENDENCIES
   capybara
   database_cleaner!
   pry
+  rack (>= 2.2.3)
   rack-test
-  rake
   require_all
   rspec
   shotgun
