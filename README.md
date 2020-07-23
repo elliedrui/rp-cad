@@ -1,6 +1,8 @@
 # rp-cad
 
-Welcome to rp-cad. This is designed to be used as a computer aided dispatch by fivem roleplay communities as either an external webapp or an api to be accessed by an ingame NUI, which will be an eventual release or can be coded by fivem devs with a functional understanding of api usage.  In it's current state it can be used as a member and persona management system with ability to create, edit, and delete members, personas, addresses, vehicles, and guns the last 3 belonging to both persona and the owning member for easy lookups.  There is a non utilized admin level that when utilized will allow the ability for admins to perform restricted actions. This functionality will be in the next release
+Welcome to rp-cad. 
+This project was initiated as the first project for  Flatiron School's Online Software Engineering Bootcamp.
+This is designed to be used as a computer aided dispatch by fivem roleplay communities as either an external webapp or an api to be accessed by an ingame NUI, which will be an eventual release or can be coded by fivem devs with a functional understanding of api usage.  In it's current state it can be used as a member and persona management system with ability to create, edit, and delete members, personas, addresses, vehicles, and guns the last 3 belonging to both persona and the owning member for easy lookups.  There is a non utilized admin level that when utilized will allow the ability for admins to perform restricted actions. This functionality will be in the next release
 
 
 ## Installation
