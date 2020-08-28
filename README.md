@@ -24,7 +24,10 @@ Make sure all dependencies are installed and then run  `rake db:migrate` to crea
 
 ## Development
 
-<blank>
+### Release Roadmap:
+Ver. 1 — Conversion from SqlLite to PostgreSQL — Mid to end Sept. 2020
+
+Ver. 2 — Integration of Admin Panel by utilization of the admin_level attribute — October 2020
 
 ## Contributing
 Bug reports and pull requests are welcome on GitHub at https://github.com/JaesonWatts/rp-cad. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
