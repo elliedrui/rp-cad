@@ -33,7 +33,7 @@ Ver. 2 — Integration of Admin Panel by utilization of the admin_level attribut
 Bug reports and pull requests are welcome on GitHub at https://github.com/JaesonWatts/rp-cad. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the code of conduct.
 
 ## License
-Copyright (c) 2020 Jaeson Watts
+Copyright (c) 2020 Ellie Drui
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
